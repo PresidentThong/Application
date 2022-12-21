@@ -19,7 +19,7 @@
         {
             <div class="col-md-3">
                 <div class="thumbnail">
-                    <a href="@Url.Action("Details","Product", new { id = item.productId } )"><img src="~/Image/product/@item.ProductImage" width="300" height="300" alt="@item.BookName"></a>
+                    <a href="@Url.Action("Details","Home", new { id = item.productId } )"><img src="~/Image/product/@item.ProductImage" width="300" height="300" alt="@item.BookName"></a>
                     <div class="caption">
                         <div class="text-center">
                             <h5><strong>@Html.DisplayFor(modelItem => item.BookName)</strong> </h5>
@@ -30,7 +30,7 @@
                         </div>
                     </div>
                     <div class="text-center">
-                        <button>@Html.ActionLink("Details", "Details", new { id = item.productId }) </button>
+                        <button class="btn btn-warning">@Html.ActionLink("Add to Cart","Home", "Add", new { id = item.productId }) </button>
                     </div>
                 </div>
             </div>

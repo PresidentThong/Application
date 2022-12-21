@@ -17,6 +17,7 @@ namespace Application.Controllers
             var products = db.Products.Include(p => p.Author).Include(p => p.Category);
             return View(products.ToList());
         }
+
         public ActionResult Details(int? id)
         {
             if (id == null)
