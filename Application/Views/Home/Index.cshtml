@@ -1,0 +1,47 @@
+﻿
+@model IEnumerable<Application.Models.Product>
+@{
+    ViewBag.Title = "Home Page";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<img src="~/Image/panel.jpg"
+     width="1100" height="200">
+
+<br />
+
+<h1>Libary - List</h1>
+
+<div class="container">
+    <div class="row equal">
+
+        @foreach (var item in Model)
+        {
+            <div class="col-md-3">
+                <div class="thumbnail">
+                    <a href="@Url.Action("Details","Product", new { id = item.productId } )"><img src="~/Image/product/@item.ProductImage" width="300" height="300" alt="@item.BookName"></a>
+                    <div class="caption">
+                        <div class="text-center">
+                            <h5><strong>@Html.DisplayFor(modelItem => item.BookName)</strong> </h5>
+                            <div class="text-md-right">
+                                <h4>$ @Html.DisplayFor(modelItem => item.Price)</h4>
+                            </div>
+                            <strong>@Html.DisplayFor(modelItem => item.Author.AuthorName)</strong>
+                        </div>
+                    </div>
+                    <div class="text-center">
+                        <button>@Html.ActionLink("Details", "Details", new { id = item.productId }) </button>
+                    </div>
+                </div>
+            </div>
+        }
+    </div>
+</div>
+
+
+
+
+
+
+
+
